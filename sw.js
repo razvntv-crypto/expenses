@@ -1,7 +1,7 @@
 /* Expenses service worker: network-first, so new versions reach the phone right away.
    Falls back to the cached copy when offline. */
-const CACHE = "expenses-v1";
-const CORE = ["./", "index.html", "manifest.webmanifest", "icon-512.png", "apple-touch-icon.png"];
+const CACHE = "expenses-v2";
+const CORE = ["./", "index.html", "manifest.webmanifest", "icon-512.png", "apple-touch-icon.png", "bank-ing.png", "bank-zen.png"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE.map(u => new Request(u, { cache: "reload" })))));
